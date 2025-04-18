@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_URL = process.env.REACT_APP_API_URL;
+const API_URL = 'http://52.66.183.128:5000/api/farmer';
 
 export const createFarmer = async (data) => {
   const response = await axios.post(`${API_URL}/add`, data);

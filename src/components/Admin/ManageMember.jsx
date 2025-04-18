@@ -24,7 +24,7 @@ const ManageMember = () => {
 
   const fetchMembers = async () => {
     try {
-      const res = await axios.get("http://localhost:5000/api/members");
+      const res = await axios.get("http://52.66.183.128:5000/api/members");
       setMembers(res.data);
     } catch (error) {
       console.error("Error fetching members", error);
@@ -37,7 +37,7 @@ const ManageMember = () => {
   const handleDelete = async (id) => {
     if (!window.confirm("क्या आप वाकई इस सदस्य को हटाना चाहते हैं?")) return;
     try {
-      await axios.delete(`http://localhost:5000/api/members/${id}`);
+      await axios.delete(`http://52.66.183.128:5000/api/members/${id}`);
       fetchMembers();
     } catch (error) {
       console.error("❌ सदस्य को हटाने में समस्या आई", error);
@@ -47,7 +47,7 @@ const ManageMember = () => {
 
   const handleDownloadPDF = async () => {
     try {
-      const res = await axios.get("http://localhost:5000/api/members/download", {
+      const res = await axios.get("http://52.66.183.128:5000/api/members/download", {
         responseType: "blob",
       });
       setPdfData(URL.createObjectURL(res.data));
@@ -102,7 +102,7 @@ const ManageMember = () => {
                 <td>
                   {member.photo ? (
                     <img
-                      src={`http://localhost:5000/uploads/${member.photo}`}
+                      src={`http://52.66.183.128:5000/uploads/${member.photo}`}
                       alt="Profile"
                       width="50"
                       height="50"
@@ -116,7 +116,7 @@ const ManageMember = () => {
                 <td>
                   {member.govId ? (
                     <a
-                      href={`http://localhost:5000/uploads/${member.govId}`}
+                      href={`http://52.66.183.128:5000/uploads/${member.govId}`}
                       target="_blank"
                       rel="noopener noreferrer"
                     >

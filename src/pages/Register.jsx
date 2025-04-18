@@ -3,7 +3,8 @@ import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import { useTranslation } from 'react-i18next'; // ✅ Import useTranslation
 import '../styles/Register.css';
-const apiUrl = process.env.REACT_APP_API_URL;
+const API_URL = process.env.REACT_APP_API_URL;
+
 const Register = () => {
   const { t } = useTranslation(); // ✅ Initialize translation hook
 
@@ -35,7 +36,7 @@ const Register = () => {
 
     try {
       console.log('➡️ Registering user:', formData);
-      const res = await axios.post('${apiUrl}/api/register', formData);
+      const res = await axios.post('http://52.66.183.128:5000/api/register', formData);
 
       if (res.data.success) {
         console.log('✅ Registration successful:', res.data);

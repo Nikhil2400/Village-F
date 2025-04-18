@@ -17,7 +17,7 @@ import {
 import { Edit, Delete } from '@mui/icons-material';
 import "../../styles/Message.css";
 
-const BASE_URL = 'http://localhost:5000/api';
+const BASE_URL = 'http://52.66.183.128:5000/api';
 
 const Message = () => {
   const [numbers, setNumbers] = useState([]);

@@ -14,7 +14,7 @@ const Documents = () => {
     const fetchPdfs = async () => {
         try {
             setLoading(true);
-            const res = await axios.get("http://localhost:5000/pdfs");
+            const res = await axios.get("http://52.66.183.128:5000/pdfs");
             setPdfs(res.data);
             setError(null);
         } catch (err) {
@@ -36,7 +36,7 @@ const Documents = () => {
                 {pdfs.length > 0 ? (
                     pdfs.map((pdf) => (
                         <div key={pdf.id} className="pdf-box">
-                            <a href={`http://localhost:5000/${pdf.pdf_path}`} 
+                            <a href={`http://52.66.183.128:5000/${pdf.pdf_path}`} 
                                target="_blank" 
                                rel="noopener noreferrer">
                                 📂 {pdf.name}
