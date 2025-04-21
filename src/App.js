@@ -65,22 +65,20 @@ const App = () => {
   return (
     <div>
       <LanguageSelector />
-      <BackButton/>
-    
-     
-
-      
+      <BackButton />
 
       {!isAdminPage && <Header user={user} isAdmin={isAdmin} setUser={setUser} setIsAdmin={setIsAdmin} />}
       {!isAdminPage && <Navbar isAdmin={isAdmin} user={user} />}
 
       <Routes>
         <Route path="/" element={<LandingPage />} />
-        <Route path="/login" element={user ? <Navigate to={isAdmin ? "/admin" : "/home"} /> : <Login setUser={setUser} setIsAdmin={setIsAdmin} />} />
-        <Route path="/register" element={user ? <Navigate to={isAdmin ? "/admin" : "/home"} /> : <Register />} />
-        <Route path="/home" element={user ? <Home user={user} /> : <Navigate to="/login" />} />
-        <Route path="/admin" element={isAdmin ? <AdminDashboard /> : <Navigate to="/login" />} />
-        <Route path="/admin/*" element={isAdmin ? <AdminRoutes /> : <Navigate to="/login" />} />
+        {/* <Route path="/login" element={<Login setUser={setUser} setIsAdmin={setIsAdmin} />} /> */}
+        <Route path="/register" element={<Register />} />
+        <Route path="/home" element={<Home user={user} />} />
+        
+        {/* Admin Dashboard and Admin Routes are now publicly accessible */}
+        <Route path="/admin" element={<AdminDashboard />} />
+        <Route path="/admin/*" element={<AdminRoutes />} />
 
         {/* General Routes */}
         <Route path="/farmer-form" element={<FarmerForm />} />
@@ -94,7 +92,7 @@ const App = () => {
         <Route path="/profile" element={<UserProfile />} />
         <Route path="/edu" element={<Edu />} />
         <Route path="/intro-section" element={<IntroSection />} />
-        
+
         {/* Schemes */}
         <Route path="/govschemes" element={<GovSchemes />} />
         <Route path="/social-apps" element={<SocialApps />} />
@@ -110,7 +108,6 @@ const App = () => {
         <Route path="/tourism" element={<Tourism />} />
         <Route path="/digital-calendar" element={<DigitalCalendar />} />
         <Route path="/education" element={<Education />} />
-      
 
         {/* Fallback */}
         <Route path="*" element={<Navigate to="/" />} />

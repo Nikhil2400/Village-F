@@ -103,6 +103,14 @@ const Navbar = () => {
           >
             {!user ? (
               <>
+               <MenuItem
+                  onClick={() => {
+                    handleUserMenuClose();
+                    navigate("/admin");
+                  }}
+                >
+                  {t("Admin DashBoard")}
+                </MenuItem>
                 <MenuItem
                   onClick={() => {
                     handleUserMenuClose();
@@ -118,6 +126,7 @@ const Navbar = () => {
                   }}
                 >
                   {t("register")}
+                  
                 </MenuItem>
               </>
             ) : (

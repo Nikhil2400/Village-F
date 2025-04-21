@@ -41,10 +41,10 @@ const AdminDashboard = () => {
 
   // Redirect to login if not logged in
   useEffect(() => {
-    const token = localStorage.getItem("adminToken");
-    if (!token) {
-      navigate("/admin"); // redirect if token not found
-    }
+    // const token = localStorage.getItem("adminToken");
+    // if (!token) {
+    //   navigate("/admin"); // redirect if token not found
+    // }                                                            //uncomment after   set admin login private 
     fetchDashboardData();
   }, []);
 
