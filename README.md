@@ -91,7 +91,7 @@ This frontend is fully connected to a custom-built Node.js + Express backend, us
 
 📦 API Endpoints for full CRUD operations
 
-✅ Backend GitHub Repository -
+✅ Backend GitHub Repository - https://github.com/Nikhil2400/Village-APP.git
 
 The backend is connected to the frontend via RESTful APIs and deployed on an AWS server with proper routing and security.
 
